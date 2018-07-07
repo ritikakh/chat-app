@@ -4,10 +4,15 @@ import { bindActionCreators } from "redux";
 import {handleSubmitUserData} from "../actions/username.action";
 import SignInForm from "./sign-in-form";
 
-function mapDispatchToProps(dispatch) {
+const mapDispatchToProps = (dispatch) => {
   return bindActionCreators({
     handleSubmit: handleSubmitUserData
   }, dispatch);
-}
+};
 
-export default connect(null, mapDispatchToProps)(SignInForm);
+const mapStateToProps = (state) => ({
+  username: state.chat.username
+});
+
+
+export default connect(mapStateToProps, mapDispatchToProps)(SignInForm);

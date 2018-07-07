@@ -24,18 +24,27 @@ export default class SignInForm extends Component {
   }
 
   render() {
-    const {submit} = this.props;
+    const {submit, username} = this.props;
+
+    if (username) {
+      return (
+        <div>
+          <h2>Welcome to the chat group, {username}</h2>
+        </div>
+      );
+    }
+
     return (
-      <div>
-        <form onSubmit={this.onSubmit}>
-          <h2>Enter your username here</h2>
-          <input placeholder="Enter your username"
-                 value={this.state.username}
-                 onChange={this.onInputChange}
-                 className="chat-input-box"/>
-          <button className="btn btn-primary chat-submit-button">Submit</button>
-        </form>
-      </div>
-    )
-  }
+        <div>
+          <form onSubmit={this.onSubmit}>
+            <h2>Enter your username here</h2>
+            <input placeholder="Enter your username"
+                   value={this.state.username}
+                   onChange={this.onInputChange}
+                   className="chat-input-box"/>
+            <button className="btn btn-primary chat-submit-button">Submit</button>
+          </form>
+        </div>
+      )
+    }
 }
