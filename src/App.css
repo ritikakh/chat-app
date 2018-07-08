@@ -43,6 +43,7 @@
   margin: auto;
   margin-top: 10px;
   border-radius: 10px;
+  overflow: hidden;
 }
 
 .message-tool-input-div {

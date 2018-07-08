@@ -1,12 +1,13 @@
 import { connect } from 'react-redux';
 import { bindActionCreators } from "redux";
 
-import {handleSendUserMessage} from "../actions/usermessage.action";
+import {handleSendUserMessage, handleRobotMessage} from "../actions/usermessage.action";
 import MessageToolInput from "./message-tool-input";
 
 const mapDispatchToProps = (dispatch) => {
   return bindActionCreators({
-    handleSubmit: handleSendUserMessage
+    handleSubmit: handleSendUserMessage,
+    sendAutomatedMessage: handleRobotMessage
   }, dispatch);
 };
 

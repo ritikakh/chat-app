@@ -11,9 +11,9 @@ export default class MessageTool extends Component {
     return (
       <div>
         <div className="message-screen">
-          {messages.map((message) => {
+          {messages.map((message, index) => {
             return (
-              <ol className="message-screen-text">
+              <ol key={index} className="message-screen-text">
                 <span className="message-username">{message.username}</span> -
                 <span className="message-message">&nbsp; {message.message}</span>
               </ol>

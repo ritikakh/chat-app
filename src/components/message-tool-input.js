@@ -10,7 +10,15 @@ export default class MessageToolInput extends Component {
     this.inputChange = this.inputChange.bind(this);
   }
 
+  componentDidMount() {
+    const {sendAutomatedMessage} = this.props;
+    setInterval(() => {
+      sendAutomatedMessage()
+    }, 60000);
+  }
+
   inputChange(e) {
+    e.preventDefault();
       if(e && e.target) {
         this.setState({
           userMessage: e.target.value

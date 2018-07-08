@@ -6,3 +6,7 @@ export const handleSendUserMessage = (message) => (dispatch, getState) => {
 
   return dispatch(sendUserMessage({ username, message }));
 };
+
+export const handleRobotMessage = (message = "blacksms", username = "Robot") => (dispatch) => {
+  return dispatch(sendUserMessage({ username, message }));
+};
