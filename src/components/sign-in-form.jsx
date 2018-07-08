@@ -7,7 +7,7 @@ export default class SignInForm extends Component {
   constructor(props) {
     super(props); //calling the parent method of Component
 
-    this.state = {term: ''}; //initializing state
+    this.state = {username: ''}; //initializing state
     this.onInputChange = this.onInputChange.bind(this);
     this.onSubmit = this.onSubmit.bind(this);
   }
